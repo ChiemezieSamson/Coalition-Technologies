@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="module" src="./Components/Script.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="./Index.Css">
+
+  <!-- Primary Meta Tags -->
+  <title>Tech.Care.com</title>
+  <meta name="title" content="Tech.Care.com" />
+  <meta name="description" content="Using the Coalition Technologies Patient Data API, to fetch the information that will be used to populate the data base UI" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="" />
+  <meta property="og:title" content="Tech.Care.com" />
+  <meta property="og:description" content="Using the Coalition Technologies Patient Data API, to fetch the information that will be used to populate the data base UI" />
+  <meta property="og:image" content="./Asset/meta_data_image.png" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="./Asset/meta_data_image.png" />
+  <meta property="twitter:title" content="Tech.Care.com" />
+  <meta property="twitter:description" content="Using the Coalition Technologies Patient Data API, to fetch the information that will be used to populate the data base UI" />
+  <meta property="twitter:image" content="" />
+</head>
+<body>
+  <header class="header">
+    <!-- DashBoard Logo -->
+    <div class="logo">
+      <img src="./Asset/./Svg/TestLogo.svg" alt="Test logo" loading="lazy">
+    </div>
+
+    <!-- DashBoard Navigations -->
+    <nav class="navigations"></nav>
+
+    <!-- DashBoard profile and setting -->
+    <div class="profile">
+      <div class="user">
+        <div class="image_wrapper">
+          <img src="" alt="user image" loading="lazy">
+        </div>
+
+        <span class="user_info">
+          <b class="user_name"></b>
+          <small class="user_occupation"></small>
+        </span>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="icons">          
+        <span class="image_wrapper">
+          <img src="./Asset/Svg/settings_FILL0.svg" alt="settings">
+        </span>
+        <span class="image_wrapper">
+          <img src="./Asset/Svg/more_vert_FILL0.svg" alt="more">
+        </span>
+      </div>
+    </div>
+  </header>
+  
+
+  <main class="main">
+    <!-- Patient list section start here -->
+    <section class="patient">
+      <div class="head">
+        <h3>Patients</h3>
+        <span class="image_wrapper icons">
+          <img src="./Asset/./Svg/search_FILL0.svg" alt="search" loading="lazy">
+        </span>
+      </div>    
+
+      <!-- patient list wrapper-->
+      <div class="user_list_wrapper"></div>
+    </section>
+
+
+    <!-- User diagnosis history and diagnostic list section start here -->
+    <section class="diagnosis_history">
+      <div class="diagnosis">
+        <h3 class="head">Diagnosis History</h3>
+
+        <!-- Blood pressure Chart -->
+        <div class="blood_pressure">
+          <div class="blood_chart">
+            <div class="head">
+              <b>Blood Pressure</b>
+
+              <span class="result_time">
+                Last 6 months 
+                <span class="image_wrapper icons">
+                  <img src="./Asset/./Svg/expand_more_FILL0.svg" alt="select month arrow down" loading="lazy">
+                </span>
+              </span>
+            </div>
+
+            <div >
+              <canvas id="myChart" class="myCanvas"></canvas>
+            </div>
+          </div>
+
+          <ul class="systolic_diastolic"></ul>
+        </div>
+
+        <!-- Respiratory Rate, Temperature and Heart Rate -->
+        <div class="rate_temperature"></div>
+      </div>
+
+      <!-- Diagnostic list section start here -->
+      <div class="diagnostic">
+        <h3 class="head">Diagnostic List</h3>
+
+          <ul class="table_head">
+            <li>Problem/Diagnosis</li>
+            <li>Description</li>
+            <li>Status</li>
+          </ul>
+        
+          <ul class="table"></ul>
+      </div>
+    </section>
+
+    <!-- User information and lab results section start here -->
+    <section class="user_info_display">
+      <!-- User information section start here -->
+      <div class="user_details">
+        <div class="user_details_img">
+          <img src="" alt="" loading="lazy">
+        </div>
+        <h3 class="user_details_name"></h3>
+        <ul class="user_details_list_wrapper"></ul>
+
+        <button type="button" class="show_more_user_details">
+          Show All Information
+        </button>
+      </div>
+
+      <!-- Lab result section start here -->
+        <div class="lab_result">
+          <h3 class="head">Lab Results</h3>
+
+          <ul class="lab_result_list"></ul>
+        </div>
+    </section>
+  </main> 
+</body>
+</html>

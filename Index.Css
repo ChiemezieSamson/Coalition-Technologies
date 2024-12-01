@@ -1,0 +1,579 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;400;500;600;700&family=Lora:ital,wght@1,400;1,500;1,600&family=Varela&family=Varela+Round&display=swap');
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg);
+  overscroll-behavior-block: contain;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* , *::before, *::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+:root {
+  --bg:#F6F7F8;
+  --body_bg:#C8CCD41A;
+  --item_bg:#FFFFFF;
+  --text: #072635;
+  --text_soft: #707070;
+  --thumbscroll_bg:#E3E4E6;
+  --heart_rate: #FFE6F1;
+  --respiratory_rate: #E0F3FA;
+  --temperature: #FFE6E9;
+  --downlod_icon: #000000;
+  --button: #01F0D0;
+  --item_select_bg:#D8FCF7;
+  --chart_bg: #F4F0FE;
+  --chart_point_one: #E66FD2;
+  --chart_point_two: #8C6FE6;
+  --divider: #EDEDED;
+  --font-12: 12px;
+  --font-14: 14px;
+  --font-16: 16px;
+  --font-18: 18px;
+  --font-22: 22px;
+  --font-24: 24px;
+  --font-30: 30px;
+  --font-48: 48px;
+  --gap-7: 7px;
+}
+
+body {
+  font-family: "Varela Round", cursive;
+  font-size: var(--font-14);
+  font-weight: normal;
+  overflow-x: hidden;
+  color: var(--text);
+  background-color: var(--body_bg);
+  padding: var(--font-16);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: var(--text);
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+h3 {
+  font-size: var(--font-24);
+  text-align: left;
+}
+
+/* Shared styles are here */
+
+.header, .navigations ul, .profile, 
+.profile .user, .icons, .patient .head,
+.user_list_wrapper ul .patient_list,
+.patient_list .user{
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+}
+
+.user img{
+  max-width: var(--font-48);  
+  max-height: var(--font-48);
+}  
+
+.icons img, .logo img {
+  width: auto;
+  height: auto;
+  object-fit: none;
+}
+
+.image_wrapper, .header .logo  {
+  display: grid;
+  align-items: center;
+}
+
+.header, .patient, 
+.diagnosis_history .diagnosis, 
+.diagnosis_history .diagnostic, 
+.user_info_display .user_details, 
+.user_info_display .lab_result {
+  background-color: var(--item_bg);
+}
+
+.svg_span svg {
+  cursor: pointer;
+  color: var(--downlod_icon);
+}
+
+/* Navigation section style start here */
+
+.header {
+  width: 100%;
+  padding: 0.5rem 2rem 0.5rem 0px;
+  overflow: clip;
+  border-radius: 70px;
+  -webkit-border-radius: 70px;
+  -moz-border-radius: 70px;
+  -ms-border-radius: 70px;
+  -o-border-radius: 70px;
+}
+
+.navigations ul li:nth-child(2)  {
+  background-color: var(--button);
+  border-radius: 41px;
+  -webkit-border-radius: 41px;
+  -moz-border-radius: 41px;
+  -ms-border-radius: 41px;
+  -o-border-radius: 41px;
+}
+
+.navList .navLink {
+ display: flex;
+ align-items: center;
+ text-align: center;
+ justify-content: center;
+ gap: var(--gap-7);
+ font-weight: 600;
+ padding: .5rem;
+}
+
+.profile {
+  justify-self: end;
+  gap: 0px var(--font-12);
+}
+
+.profile .user {
+  gap: 0px var(--gap-7);
+}
+
+.profile .user .user_info, 
+.user_list_wrapper ul,
+.patient_list .user .user_name_gender{
+  display: grid;
+  grid-auto-flow: row;
+  gap: 2px 0px;
+}
+
+.divider {
+  background-color: var(--divider);
+  width: 1px;
+  height: 100%;
+}
+
+.profile .icons {
+  gap: 0px var(--gap-7);
+}
+
+.user_info .user_occupation, 
+.user .user_name_gender .user_gender {
+  color: var(--text_soft);
+}
+
+/* main body section style start here */
+
+.main {
+  margin-block: var(--font-22);
+  display: grid;
+  gap: var(--font-22);
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  justify-content: center;
+  align-items: start;
+}
+
+.main .patient, .main .user_info_display{
+  grid-column: span 1 / span 1;
+}
+
+.main .diagnosis_history{
+  grid-column: span 3 / span 3;
+}
+
+.main .patient, 
+.main .user_info_display .user_details, 
+.main .user_info_display .lab_result, 
+.main .diagnosis_history .diagnosis, 
+.main .diagnosis_history .diagnostic{
+  border-radius: 16px;
+  padding: var(--font-22) var(--font-16);
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  -ms-border-radius: 16px;
+  -o-border-radius: 16px;
+}
+
+
+/* patient section style start here */
+
+.patient .head {
+  justify-content: space-between;
+  margin-bottom: var(--font-30);
+}
+
+.patient .user_list_wrapper, 
+.diagnostic .table,
+.lab_result .lab_result_list {
+  max-height: 88dvh;
+  overflow-y: scroll;
+  overscroll-behavior: contain;
+  scroll-behavior: smooth;
+}
+
+.patient .user_list_wrapper::-webkit-scrollbar,
+.diagnostic .table::-webkit-scrollbar,
+.lab_result .lab_result_list::-webkit-scrollbar {
+  width: 5px;
+}
+
+.patient .user_list_wrapper::-webkit-scrollbar-track,
+.diagnostic .table::-webkit-scrollbar-track,
+.lab_result .lab_result_list::-webkit-scrollbar-track {
+  background-color: var(--thumbscroll_bg);
+  border-radius: 5px;
+  margin-block: 0.5em;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.patient .user_list_wrapper::-webkit-scrollbar-thumb,
+.diagnostic .table::-webkit-scrollbar-thumb,
+.lab_result .lab_result_list::-webkit-scrollbar-thumb {
+  background-color: var(--text);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.user_list_wrapper ul {
+  gap: var(--gap-7) 0px;
+}
+
+.user_list_wrapper ul .patient_list {
+  position: relative;
+  isolation: isolate;
+  cursor: pointer;
+  padding: var(--font-18);
+  justify-content: space-between;
+}
+
+.user_list_wrapper ul .patient_list::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.user_list_wrapper ul .patient_list.active {
+  background-color: var(--item_select_bg);
+}
+
+.patient_list .user {
+  gap: var(--font-12);
+}
+
+.patient_list .user .user_name_gender {
+  gap: 4px 0px;
+}
+
+/* diagnosis_history section start here */
+
+.diagnosis_history, .diagnosis,
+.diagnostic, .lab_result {
+  display: grid;
+  grid-auto-flow: row;
+  gap: var(--font-22) 0px;
+} 
+
+.diagnosis .head,
+.lab_result .head, .diagnostic .head {
+  margin-bottom: var(--gap-7);
+  max-height: min-content;
+}
+
+.diagnosis .blood_pressure {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: start;
+  gap: 0px var(--font-48);
+  background-color: var(--chart_bg);
+  padding: var(--font-18);
+  border-radius: var(--font-12);
+  -webkit-border-radius: var(--font-12);
+  -moz-border-radius: var(--font-12);
+  -ms-border-radius: var(--font-12);
+  -o-border-radius: var(--font-12);
+}
+
+
+.blood_pressure .blood_chart {
+  grid-column: span 3 / span 3;
+  display: grid;
+  grid-auto-flow: row;
+  gap: var(--gap-7) 0px;
+}
+
+.blood_chart .head {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 0px var(--font-22);
+}
+
+.blood_chart .head b {
+  font-size: var(--font-18);
+}
+
+.blood_chart .result_time {
+  display: flex;
+  align-items: center;
+  gap: 0px var(--font-14);
+  font-weight: 300;
+}
+
+.blood_chart .myCanvas {
+  display: grid;
+  max-height: 300px;
+}
+
+.diagnosis .systolic_diastolic {
+  grid-column: span 1 / span 1;
+  padding-inline: 4px;
+}
+
+.systolic_diastolic .systolic_diastolic_list {
+  display: grid;
+  grid-auto-flow: row;
+  gap: var(--font-16);
+  padding-bottom: var(--font-18);
+}
+
+.systolic_diastolic .systolic_diastolic_list:nth-child(2) {
+  padding-top:  var(--font-18);
+  border-top: 1px solid #CBC8D4;
+}
+
+.systolic_diastolic_list .result_title {
+  font-weight: 600;
+  letter-spacing: 0.025em;
+}
+
+.systolic_diastolic_list .result_title::before {
+  content: " ";
+  display: inline-block;
+  width: var(--font-12);
+  height: var(--font-12);
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-inline: 0px 5px;
+}
+
+.systolic_diastolic_list:nth-child(1) .result_title::before {
+  background-color: var(--chart_point_one);
+}
+
+.systolic_diastolic_list:nth-child(2) .result_title::before {
+  background-color: var(--chart_point_two);
+}
+
+.systolic_diastolic_list .result_number {
+  font-size: var(--font-22);
+}
+
+.systolic_diastolic_list .result_state,
+.health_list .svg_span .result_state{
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  gap: 0px 5px;
+  max-width: fit-content;
+}
+
+.diagnosis .rate_temperature ul {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--font-22);
+}
+
+.rate_temperature ul .health_list {
+  gap: var(--font-18);
+  padding: var(--font-48) var(--font-16);
+  border-radius: var(--font-12);
+  -webkit-border-radius: var(--font-12);
+  -moz-border-radius: var(--font-12);
+  -ms-border-radius: var(--font-12);
+  -o-border-radius: var(--font-12);
+}
+
+.health_list:nth-child(1) {
+  background-color: var(--respiratory_rate);
+}
+
+.health_list:nth-child(2) {
+  background-color: var(--temperature);
+}
+
+.health_list:nth-child(3) {
+  background-color: var(--heart_rate);
+}
+
+.health_list, .health_list .svg_span {
+  display: grid;
+  grid-auto-flow: row;
+}
+
+.health_list .svg_span .result_title {
+  text-transform: capitalize;
+  font-size: var(--font-16);
+  font-weight: 500;
+  margin-bottom: var(--gap-7);
+}
+
+.health_list .svg_span .result_number {
+  font-size: var(--font-30);
+  margin-bottom: var(--font-18);
+}
+
+
+/* diagnostic section style start here */
+
+.diagnostic .table_head {
+  padding: var(--font-14) var(--font-18);
+  max-height: fit-content;
+  background-color: var(--bg);
+  border-radius: var(--font-24);
+  -webkit-border-radius: var(--font-24);
+  -moz-border-radius: var(--font-24);
+  -ms-border-radius: var(--font-24);
+  -o-border-radius: var(--font-24);
+}
+
+.diagnostic .table_head li {
+  font-weight: 600;
+  text-transform: capitalize;
+  letter-spacing: 0.025em;
+}
+
+.diagnostic .table {
+  display: grid;
+  align-items: center;
+  align-content: start;
+  height: 114px;
+  grid-auto-flow: row; 
+  gap: var(--font-16) 0px;
+  padding: 0px var(--font-18) var(--gap-7);
+}
+
+.diagnostic .table .table_list, .diagnostic .table_head {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  align-items: center;
+}
+
+.table_list .table_item:nth-child(even),
+.diagnostic .table_head li:nth-child(even) {
+  grid-column: span 3 / span 3;
+}
+
+.table_list .table_item:nth-child(odd),
+.diagnostic .table_head li:nth-child(odd) {
+  grid-column: span 1 / span 1;
+}
+
+
+/* User information and lab results section style start here */
+
+.user_info_display,
+.user_info_display .user_details,
+.user_details_list_wrapper {
+  display: grid;
+  grid-auto-flow: row;
+  gap: var(--font-18) 0px;
+}
+
+.user_info_display .user_details_img {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+.user_info_display .user_details_img img {
+  width: 150px;
+  height: 150px;
+  margin-inline: auto;
+}
+
+.user_info_display .user_details_name {
+  text-align: center;
+  font-size: var(--font-24);
+  text-transform: capitalize;
+  font-weight: 700;
+}
+
+.user_details_list_wrapper {
+  padding-block: var(--gap-7);
+}
+
+.user_details_list_wrapper .user_details_list {
+  display: flex;
+  align-items: center;
+  gap: 0px var(--font-14);
+}
+
+.user_details_list .item_wrapper {
+  display: grid;
+  grid-auto-flow: row;
+  gap: 4px;
+}
+
+.item_wrapper .item_name {
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
+.user_details .show_more_user_details,
+.show_more_user_details:focus {
+  border: 0px solid transparent;
+  outline: none;
+  background-color: var(--button);
+  max-width: fit-content; 
+  margin-inline: auto;
+  padding: var(--font-14) var(--font-30);
+  text-transform: capitalize;
+  font-weight: 600;
+  border-radius: 41px;
+  -webkit-border-radius: 41px;
+  -moz-border-radius: 41px;
+  -ms-border-radius: 41px;
+  -o-border-radius: 41px;
+}
+
+/* Lab result section styles starts here */
+.lab_result .lab_result_list {
+  height: 350px;
+  display: grid;
+  align-items: center;
+  align-content: start;
+  grid-auto-flow: row;
+  gap: 4px;
+}
+
+.lab_result_list .result_list {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--gap-7);
+}
